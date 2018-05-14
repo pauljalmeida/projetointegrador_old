@@ -1,0 +1,56 @@
+ <?php
+// Retorna o ID passado por parâmetro na URL.
+// Este id será enviado à URL cliente-deletar-salvar/id
+ 
+$url = parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH);
+$pieces = explode("/", $url);
+$id = $pieces[2];
+?>
+
+
+ <div class="jumbotron">
+        <h1>Construir sem Grilos</h1>
+
+        
+  
+  <div class="info">
+ <table class="table table-striped table-hover table-bordered">
+    <tr>        
+        <td>Nome</td>        
+        <td>Descrição</td>
+        <td>Imagem</td>
+    </tr> 
+    <?php 
+    /* $this->view->clientes é o array de clientes que foi passado pelo Controller, *após a excução do método select();
+    * Através do foreach, é percorrido todo o array para fazer a impressão dos dados
+    */ 
+     
+    ?>
+    
+        <?php
+
+        foreach ($this->view->produtos as $produto) {
+
+            ?>
+
+        <tr>
+            
+        
+        <td><?php echo $produto["nome_produto"]; ?></td>
+        
+        <td><?php echo $produto["descricao"]; ?></td>
+        <td><?php echo $produto["imagem"]; ?></td>
+        <td>
+        </td>
+        </tr>
+
+        <?php
+        }
+        ?>
+
+    
+    
+</table>
+
+</div>
+        

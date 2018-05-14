@@ -1,0 +1,42 @@
+<!-- 
+ <div class="col-lg-6">
+    <h2>Usuario ou senha incorretos</h2>
+    <p>Deseja tentar novamente</p>
+    <p><a class="btn btn-success" href="login" role="button">Tentar novamente</a>   ou   <a class="btn btn-primary" href="/" role="button">Voltar para o inicio</a></p>
+  </div> -->
+
+
+<?php
+if(!isset($_SESSION))
+{
+   session_start();
+}
+if ($_SESSION['logado']):
+?>	
+
+ <h1>View de entrada do sistema</h1>
+
+ <nav>
+          <ul class="nav nav-justified">
+            
+            <li><a href="cate-cadastrar">Cadastrar categorias</a></li>
+            <li><a href="cate">ver categorias</a></li>
+            <li><a href="material-cadastrar">Cadastrar Material</a></li>
+            <li><a href="material">Ver Material</a></li>
+            <li><a href="cliente">Ver clientes</a></li>
+          </ul>
+        </nav>
+
+
+
+
+
+
+ <a href="sair">Sair do painel Administrativo</a>
+
+<?php
+else:
+header("Location: login");
+endif;
+?> 
+

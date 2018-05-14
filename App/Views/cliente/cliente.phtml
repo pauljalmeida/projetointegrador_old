@@ -1,0 +1,27 @@
+
+
+<h4>Relação de clientes</h4>
+<table class="table table-striped table-hover table-bordered">
+    <tr>        
+        <td>Nome</td>
+        <td>E-mail</td>
+        <td>Descrição</td>
+        <td>Ações</td>
+    </tr> 
+    <?php 
+    /* $this->view->clientes é o array de clientes que foi passado pelo Controller, *após a excução do método select();
+    * Através do foreach, é percorrido todo o array para fazer a impressão dos dados
+    */ 
+    foreach ($this->view->clientes as $cliente): 
+    ?>
+    <tr>
+        <td><?php echo $cliente["nome"]; ?></td>
+        <td><?php echo $cliente["email"]; ?></td>
+        <td><?php echo $cliente["descricao"]; ?></td>
+        <td>
+            <a href="cliente-editar/<?php echo $cliente["id"]; ?>"><span class='glyphicon glyphicon-pencil'></span></a>
+            <a href="cliente-deletar-confirmacao/<?php echo $cliente["id"]; ?>"><span class='glyphicon glyphicon-remove'></span></a>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+</table>

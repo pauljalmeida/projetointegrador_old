@@ -1,0 +1,30 @@
+ <div class="jumbotron">
+        <h1>Construir sem Grilos</h1>
+
+        
+  
+  <div class="info">
+ <table class="table table-striped table-hover table-bordered">
+    <tr>        
+        <td>Nome</td>
+       
+    </tr> 
+    <?php 
+
+    // print_r($this->view->categoria);
+    // die;
+    /* $this->view->clientes é o array de clientes que foi passado pelo Controller, *após a excução do método select();
+    * Através do foreach, é percorrido todo o array para fazer a impressão dos dados
+    */ 
+    foreach ($this->view->categorias as $categoria): 
+    ?>
+    <tr>
+        <td><a href="/produtos/<?php echo $categoria["id_categoria"]; ?>"><?php echo $categoria["nome"]; ?></a></td>
+      
+        
+    </tr>
+    <?php endforeach; ?>
+</table>
+
+  </div>
+        

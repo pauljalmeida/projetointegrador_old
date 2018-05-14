@@ -1,0 +1,24 @@
+
+<h4>Relação de categorias</h4>
+<table class="table table-striped table-hover table-bordered">
+    <tr>        
+        <td>Nome</td>
+        <td>editar e Excluir</td>
+       
+    </tr> 
+    <?php 
+    /* $this->view->clientes é o array de clientes que foi passado pelo Controller, *após a excução do método select();
+    * Através do foreach, é percorrido todo o array para fazer a impressão dos dados
+    */ 
+    foreach ($this->view->cates as $cate): 
+    ?>
+    <tr>
+        <td><?php echo $cate["nome"]; ?></td>
+        
+        <td>
+            <a href="cate-editar/<?php echo $cate["id_categoria"]; ?>"><span class='glyphicon glyphicon-pencil'></span></a>
+            <a href="cate-deletar-confirmacao/<?php echo $cate["id_categoria"]; ?>"><span class='glyphicon glyphicon-remove'></span></a>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+</table>
